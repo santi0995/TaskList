@@ -66,7 +66,7 @@ const App = () => {
         />
         <Modal visible={isModalVisible} animationType='slide'>
           <View style={styles.modalContainer}>
-          <Text style={styles.modalTitle}>Si se muestra</Text>
+          <Text style={styles.modalTitle}>Lista de tareas</Text>
           <View style={styles.modalDetailContainer}>
           <Text style={styles.modalDetailMessage}>Quieres eliminar la tarea?</Text>
           <Text style={styles.selectedTask}>{selectedTask?.value}</Text>
