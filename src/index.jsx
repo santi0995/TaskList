@@ -1,7 +1,7 @@
 import { Button, FlatList, Modal, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import React, {useState} from 'react';
 
-export default function App() {
+const App = () => {
   
   const [task, setTask] = useState('');
   const [tasks, setTasks] = useState([]);
@@ -41,7 +41,7 @@ export default function App() {
   }
 
   const onHandlerDelete = () => {
-    setTasks((prevTaskList) => prevTaskList.filter((task) => task.id != selectedTask.id));
+    setTasks((prevTaskList) => prevTaskList.filter((task) => task.id !== selectedTask.id));
     setIsModalVisible(!isModalVisible);
   }
 
@@ -158,3 +158,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
 });
+
+export default App;
