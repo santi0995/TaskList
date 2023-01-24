@@ -5,7 +5,7 @@ import { styles } from './styles';
 
 const TaskList = ({tasks, onHandlerModal}) =>{
 
-
+  
   const renderItem = ({item}) => (
     <TaskItem 
     item={item}

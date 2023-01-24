@@ -1,7 +1,7 @@
 import { AddItem, CustomModal, Tasklist } from './components';
 import React, {useState} from 'react';
+import { Text, View } from 'react-native';
 
-import { View } from 'react-native';
 import { colors } from './constants/theme/colors';
 import { styles } from './styles';
 
@@ -42,12 +42,14 @@ const App = () => {
   }
 
   const onHandlerCheck = () => {
-    setTasks((prevTaskList) => prevTaskList.filter((task) => task.id == selectedTask.id))
     setIsModalVisible(!isModalVisible);
   }
 
   return (
     <View style={styles.container}>
+      <View style={styles.titleContainer}>
+      <Text style={styles.appTitle}>Lista de tareas</Text>
+      </View>
       <AddItem 
         buttonColor={colors.primary}
         buttonText='Add'
@@ -58,7 +60,8 @@ const App = () => {
         />
         <Tasklist
         tasks={tasks}
-        onHandlerModal={onHandlerModal} />
+        onHandlerModal={onHandlerModal} 
+        />
         <CustomModal 
         isModalVisible={isModalVisible}
         onHandlerCancel={onHandlerCancel}
